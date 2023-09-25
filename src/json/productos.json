@@ -1,0 +1,29 @@
+[
+  {
+    "title": "producto 3",
+    "description": "Descripción",
+    "price": 4.99,
+    "thumbnail": "imagen4.jpg",
+    "code": "P004",
+    "stock": 4,
+    "id": 3
+  },
+  {
+    "title": "producto 4",
+    "description": "Descripción",
+    "price": 4.99,
+    "thumbnail": "imagen4.jpg",
+    "code": "P001",
+    "stock": 4,
+    "id": 3
+  },
+  {
+    "title": "producto 5",
+    "description": "Descripción",
+    "price": 4.99,
+    "thumbnail": "imagen4.jpg",
+    "code": "P002",
+    "stock": 4,
+    "id": 3
+  }
+]

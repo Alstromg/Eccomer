@@ -1,0 +1,22 @@
+{
+  "name": "back-end",
+  "version": "1.0.0",
+  "description": "Desafios",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node",
+    "dev": "nodemon",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "objetos",
+    "junior"
+  ],
+  "author": "Juan Sebastian Alvarez",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "express-handlebars": "^7.1.2",
+    "socket.io": "^4.7.2"
+  }
+}
