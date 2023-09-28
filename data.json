@@ -1,0 +1,183 @@
+[
+    {
+      "title": "Producto 1",
+      "description": "Descripción del Producto 1",
+      "price": 19.99,
+      "thumbnail": "imagen1.jpg",
+      "code": "P001",
+      "category": "Electrónica",
+      "stock": 10
+    },
+    {
+      "title": "Producto 2",
+      "description": "Descripción del Producto 2",
+      "price": 29.99,
+      "thumbnail": "imagen2.jpg",
+      "code": "P002",
+      "category": "Ropa",
+      "stock": 15
+    },
+    {
+      "title": "Producto 3",
+      "description": "Descripción del Producto 3",
+      "price": 9.99,
+      "thumbnail": "imagen3.jpg",
+      "code": "P003",
+      "category": "Hogar",
+      "stock": 5
+    },
+    {
+      "title": "Producto 4",
+      "description": "Descripción del Producto 4",
+      "price": 39.99,
+      "thumbnail": "imagen4.jpg",
+      "code": "P004",
+      "category": "Electrónica",
+      "stock": 20
+    },
+    {
+      "title": "Producto 5",
+      "description": "Descripción del Producto 5",
+      "price": 14.99,
+      "thumbnail": "imagen5.jpg",
+      "code": "P005",
+      "category": "Ropa",
+      "stock": 12
+    },
+    {
+      "title": "Producto 6",
+      "description": "Descripción del Producto 6",
+      "price": 24.99,
+      "thumbnail": "imagen6.jpg",
+      "code": "P006",
+      "category": "Hogar",
+      "stock": 8
+    },
+    {
+      "title": "Producto 7",
+      "description": "Descripción del Producto 7",
+      "price": 34.99,
+      "thumbnail": "imagen7.jpg",
+      "code": "P007",
+      "category": "Electrónica",
+      "stock": 18
+    },
+    {
+      "title": "Producto 8",
+      "description": "Descripción del Producto 8",
+      "price": 49.99,
+      "thumbnail": "imagen8.jpg",
+      "code": "P008",
+      "category": "Ropa",
+      "stock": 25
+    },
+    {
+      "title": "Producto 9",
+      "description": "Descripción del Producto 9",
+      "price": 11.99,
+      "thumbnail": "imagen9.jpg",
+      "code": "P009",
+      "category": "Hogar",
+      "stock": 7
+    },
+    {
+      "title": "Producto 10",
+      "description": "Descripción del Producto 10",
+      "price": 21.99,
+      "thumbnail": "imagen10.jpg",
+      "code": "P010",
+      "category": "Electrónica",
+      "stock": 14
+    },
+    {
+      "title": "Producto 11",
+      "description": "Descripción del Producto 11",
+      "price": 31.99,
+      "thumbnail": "imagen11.jpg",
+      "code": "P011",
+      "category": "Ropa",
+      "stock": 9
+    },
+    {
+      "title": "Producto 12",
+      "description": "Descripción del Producto 12",
+      "price": 17.99,
+      "thumbnail": "imagen12.jpg",
+      "code": "P012",
+      "category": "Hogar",
+      "stock": 11
+    },
+    {
+      "title": "Producto 13",
+      "description": "Descripción del Producto 13",
+      "price": 26.99,
+      "thumbnail": "imagen13.jpg",
+      "code": "P013",
+      "category": "Electrónica",
+      "stock": 16
+    },
+    {
+      "title": "Producto 14",
+      "description": "Descripción del Producto 14",
+      "price": 19.99,
+      "thumbnail": "imagen14.jpg",
+      "code": "P014",
+      "category": "Ropa",
+      "stock": 13
+    },
+    {
+      "title": "Producto 15",
+      "description": "Descripción del Producto 15",
+      "price": 37.99,
+      "thumbnail": "imagen15.jpg",
+      "code": "P015",
+      "category": "Hogar",
+      "stock": 22
+    },
+    {
+      "title": "Producto 16",
+      "description": "Descripción del Producto 16",
+      "price": 42.99,
+      "thumbnail": "imagen16.jpg",
+      "code": "P016",
+      "category": "Electrónica",
+      "stock": 19
+    },
+    {
+      "title": "Producto 17",
+      "description": "Descripción del Producto 17",
+      "price": 14.99,
+      "thumbnail": "imagen17.jpg",
+      "code": "P017",
+      "category": "Ropa",
+      "stock": 10
+    },
+    {
+      "title": "Producto 18",
+      "description": "Descripción del Producto 18",
+      "price": 28.99,
+      "thumbnail": "imagen18.jpg",
+      "code": "P018",
+      "category": "Hogar",
+      "stock": 8
+    },
+    {
+      "title": "Producto 19",
+      "description": "Descripción del Producto 19",
+      "price": 23.99,
+      "thumbnail": "imagen19.jpg",
+      "code": "P019",
+      "category": "Electrónica",
+      "stock": 15
+    },
+    {
+      "title": "Producto 20",
+      "description": "Descripción del Producto 20",
+      "price": 16.99,
+      "thumbnail": "imagen20.jpg",
+      "code": "P020",
+      "category": "Ropa",
+      "stock": 12
+    }
+  ]
+  
