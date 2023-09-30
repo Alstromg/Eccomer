@@ -3,13 +3,13 @@
 <hr />
 <div align="center">
     {{#if paginateInfo.hasPrevPage}}
-        <a href="{{paginateInfo.prevLink}}">Anterior</a>
+        <a href="{{paginateInfo.prevLink}}"><button type="button" class="btn btn-info"> < </button></a>
     {{/if}}
     {{#each paginateInfo.totalPages}}
         <a href="{{this.link}}">{{this.page}}</a>
     {{/each}}
     {{#if paginateInfo.hasNextPage}}
-        <a href="{{paginateInfo.nextLink}}">Siguiente</a>
+        <a href="{{paginateInfo.nextLink}}"><button type="button" class="btn btn-info"> > </button> </a>
     {{/if}}
 </div>
 <hr />

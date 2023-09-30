@@ -7,7 +7,6 @@ const viewsRouter = require('./routers/view.router')
 const viewsCart = require('./routers/viewsCart')
 const cartRouter = require("./routers/cartRouter")
 const productRouter = require("./routers/productRouter")
-const path = require('path');
 
 
 const app = express();
@@ -37,7 +36,7 @@ const io = socketIO(httpServer);
       useNewUrlParser: true, 
       useUnifiedTopology: true,
     });
-    httpServer.listen(8080, () => console.log("Servidor en línea"));
+    httpServer.listen(PORT, () => console.log("Servidor en línea"));
     
   } catch (err) {
     console.error("Error al conectar a la base de datos:", err.message);
