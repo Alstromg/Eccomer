@@ -7,23 +7,34 @@ const viewsRouter = require('./routers/view.router')
 const viewsCart = require('./routers/viewsCart')
 const cartRouter = require("./routers/cartRouter")
 const productRouter = require("./routers/productRouter")
-
-
+const MongoStore = require("connect-mongo")
+const sessiomViewsRouter = require("./routers/sessiomViewsRouter")
+const session = require('express-session');
+const sessionRouter = require("./routers/sessionRouter")
 const app = express();
-const PORT = 8080
+
 app.use(express.json());
+app.use(session({
+  store: MongoStore.create({
+    mongoUrl: "mongodb+srv://Alstromg:320maVEZ@atlascluster.56bn6jf.mongodb.net/",
+    dbname: "sessions"
+  }),
+  secret: 'secret',
+  resave: true,
+  saveUninitialized: true
+}))
 app.use(express.urlencoded({extended:true}))
 app.use(express.static('./src/public'));
 app.engine('handlebars', handlebars.engine());
 app.set('views', './src/views')
 app.set('view engine', 'handlebars');
 
-
-app.get('/', (req, res) => res.render('index'))
+app.use('/', sessiomViewsRouter)
 app.use('/products', viewsRouter);
 app.use('/cart', viewsCart)
 app.use('/api/products', productRouter);
 app.use('/api/carts', cartRouter);
+app.use("/api/sessions", sessionRouter)
 
 
 const httpServer = http.createServer(app);
@@ -36,7 +47,7 @@ const io = socketIO(httpServer);
       useNewUrlParser: true, 
       useUnifiedTopology: true,
     });
-    httpServer.listen(PORT, () => console.log("Servidor en línea"));
+    httpServer.listen(8080, () => console.log("Servidor en línea"));
     
   } catch (err) {
     console.error("Error al conectar a la base de datos:", err.message);
@@ -48,6 +59,6 @@ io.on("connection", socket => {
     io.emit("updatedProducts", data);
   });
 });
-module.exports = PORT;
+
 
 

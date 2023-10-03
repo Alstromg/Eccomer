@@ -18,7 +18,7 @@ const getProducts = async (req, res) => {
         
         let prevLink;
         if (!req.query.page) {
-            prevLink = `http://${req.hostname}:${8080}${req.originalUrl}&page=${result.prevPage}`;
+            prevLink = `http://${req.hostname}:${8080}${req.originalUrl}?page=${result.prevPage}`;
         } else {
             const modifiedUrl = req.originalUrl.replace(`page=${req.query.page}`, `page=${result.prevPage}`);
             prevLink = `http://${req.hostname}:${8080}${modifiedUrl}`;
@@ -26,7 +26,7 @@ const getProducts = async (req, res) => {
         
         let nextLink;
         if (!req.query.page) {
-            nextLink = `http://${req.hostname}:${8080}${req.originalUrl}&page=${result.nextPage}`;
+            nextLink = `http://${req.hostname}:${8080}${req.originalUrl}?page=${result.nextPage}`;
         } else {
             const modifiedUrl = req.originalUrl.replace(`page=${req.query.page}`, `page=${result.nextPage}`);
             nextLink = `http://${req.hostname}:${8080}${modifiedUrl}`;

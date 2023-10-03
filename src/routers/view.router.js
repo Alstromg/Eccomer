@@ -3,9 +3,13 @@ const baseModel = require("../models/basemModel")
 const cartModel = require('../models/cartModel')
 const router = Router()
 const {getProducts} = require('../public/constroladorProduct')
-const {PORT} = require('../app')
+const{ privateRoutes} = require("../public/auth.middleware")
 
-router.get('/', async (req, res) => {
+
+
+
+
+router.get('/', privateRoutes,  async (req, res) => {
     try {
     const carro = new cartModel({ products: []})
     const saveCart = await carro.save()
@@ -16,14 +20,16 @@ router.get('/', async (req, res) => {
         let link
         for (let index = 1; index <= result.response.totalPages; index++) {
             if (!req.query.page) {
-                link = `http://${req.hostname}:${8080}${req.originalUrl}&page=${index}`
+                link = `http://${req.hostname}:${8080}${req.originalUrl}?page=${index}`
             } else {
                 const modifiedUrl = req.originalUrl.replace(`page=${req.query.page}`, `page=${index}`)
                 link = `http://${req.hostname}:${8080}${modifiedUrl}`
             }
             totalPages.push({ page: index, link })
         }
+        const user = req.session.user
         res.render('home', {
+            user,
             cart,
             products: result.response.payload, paginateInfo: {
                 hasPrevPage: result.response.hasPrevPage,
@@ -42,7 +48,7 @@ router.get('/', async (req, res) => {
 }
 })
 
-router.get('/realtimeProducts', async (req, res) => {try {const products = await baseModel.find().lean().exec()
+router.get('/realtimeProducts',privateRoutes, async (req, res) => {try {const products = await baseModel.find().lean().exec()
     const carro = new cartModel({ products: []})
     const saveCart = await carro.save()
     const cart = saveCart._id
@@ -51,6 +57,6 @@ router.get('/realtimeProducts', async (req, res) => {try {const products = await
     console.error("Error al crear el carrito:",);
     res.status(500).json({ status: "error", error: "Error interno del servidor" });
 }
-})
+}) 
 
 module.exports = router; 
