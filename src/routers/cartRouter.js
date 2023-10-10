@@ -1,7 +1,7 @@
 const  {Router}  = require('express')
 const cartModel = require("../models/cartModel")
-const baseModel = require("../models/basemModel");
-const productModel = require('../models/basemModel');
+const baseModel = require("../models/products");
+const productModel = require('../models/products');
 
 
 let products = [];

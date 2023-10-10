@@ -1,7 +1,7 @@
 const  {Router}  = require('express')
-const baseModel = require("../models/basemModel")
+const baseModel = require("../models/products")
 const cartModel = require("../models/cartModel")
-const {getProducts} = require('../public/constroladorProduct')
+const {getProducts} = require('../controladores/constroladorProduct')
 
 const router = Router()
 

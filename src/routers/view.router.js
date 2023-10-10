@@ -1,9 +1,10 @@
 const  {Router}  = require('express')
-const baseModel = require("../models/basemModel")
+const baseModel = require("../models/products")
 const cartModel = require('../models/cartModel')
 const router = Router()
-const {getProducts} = require('../public/constroladorProduct')
-const{ privateRoutes} = require("../public/auth.middleware")
+const {getProducts} = require('../controladores/constroladorProduct')
+const{ privateRoutes} = require("../middleware/auth.middleware")
+const passport = require('passport')
 
 
 
