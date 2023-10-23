@@ -2,6 +2,7 @@ const {Router} = require("express")
 const UserModel = require("../models/user.model")
 const { createHash, isValidPassword } = require("../controladores/utils")
 const passport = require("passport")
+const { privateRoutes } = require("../middleware/auth.middleware")
 
 
 const router = Router()
@@ -15,7 +16,7 @@ router.post('/register', passport.authenticate('register', {failureRedirect: '/s
 router.get('login', (req,res) =>{
     res.render('sessions/login')
 })
-router.post('/login', passport.authenticate('login', {failureRedirect: '/sessions/failLogin'}), async (req, res) => {
+router.post('/login', passport.authenticate('login', {failureRedirect: '/api/sessions/failLogin'}), async (req, res) => {
    if (!req.user){
     return res.status(400).send({status: 'error', error: 'Credenciales Invalidas'})
    }
@@ -24,8 +25,10 @@ router.post('/login', passport.authenticate('login', {failureRedirect: '/session
     last_name: req.user.last_name,
     email: req.user.email,
     age: req.user.age,
+    cart: req.user.cart,
+    rol: req.user.role
    }
-    res.redirect('/products')
+    res.redirect('/products',)
 })
 router.get('/failLogin', (req, res) => res.send({ error: "Passport Login Failed"}))
 
@@ -36,6 +39,10 @@ req.session.destroy(err =>{
     }else res.redirect('/')
 }
     )
+})
+router.get('/current', async (req,res) =>{
+    req.session.user = req.user
+    res.redirect("/current");
 })
 
 router.get('/github', passport.authenticate('github', {scope: ['user:email']}), (req, res) => {

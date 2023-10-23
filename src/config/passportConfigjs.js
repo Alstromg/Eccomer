@@ -3,6 +3,7 @@ const local = require("passport-local")
 const { createHash, isValidPassword } = require("../controladores/utils.js")
 const UserModel = require("../models/user.model.js")
 const GitHubStrategy = require('passport-github2')
+const cartModel = require("../models/cartModel.js")
 const localStrategy = local.Strategy
 const initializePassport =() => {
     passport.use('register', new localStrategy({
@@ -15,8 +16,10 @@ const initializePassport =() => {
         if(user){
             return done (null, false)
         }
+        const cart = new cartModel()
+        await cart.save();
         const newUser = {
-            first_name, last_name, email, age, password: createHash(password)
+            first_name, last_name, email, age, password: createHash(password), cart: cart._id
         }
         const result = await UserModel.create(newUser)
         return done(null, result)

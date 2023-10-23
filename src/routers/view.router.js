@@ -12,9 +12,6 @@ const passport = require('passport')
 
 router.get('/', privateRoutes,  async (req, res) => {
     try {
-    const carro = new cartModel({ products: []})
-    const saveCart = await carro.save()
-    const cart = saveCart._id
     const result = await getProducts(req, res)
     if (result.statusCode === 200) {
         const totalPages = []
@@ -31,7 +28,6 @@ router.get('/', privateRoutes,  async (req, res) => {
         const user = req.session.user
         res.render('home', {
             user,
-            cart,
             products: result.response.payload, paginateInfo: {
                 hasPrevPage: result.response.hasPrevPage,
                 hasNextPage: result.response.hasNextPage,
@@ -49,13 +45,9 @@ router.get('/', privateRoutes,  async (req, res) => {
 }
 })
 
-router.get('/realtimeProducts',privateRoutes, async (req, res) => {try {const products = await baseModel.find().lean().exec()
-    const carro = new cartModel({ products: []})
-    const saveCart = await carro.save()
-    const cart = saveCart._id
-    res.render('realTimeProducts' , {products, cart})
+router.get('/realtimeProducts',privateRoutes, async (req, res) => {try {const products = await baseModel.find().lean().exec()   
+    res.render('realTimeProducts' , products)
 }catch(err){
-    console.error("Error al crear el carrito:",);
     res.status(500).json({ status: "error", error: "Error interno del servidor" });
 }
 }) 
