@@ -14,17 +14,19 @@ const sessionRouter = require("./routers/sessionRouter")
 const app = express();
 const passport = require('passport')
 const initializePassport = require('./config/passportConfigjs')
+const config = require('./config/config')
 
 app.use(express.json());
 app.use(session({
   store: MongoStore.create({
-    mongoUrl: "mongodb+srv://Alstromg:320maVEZ@atlascluster.56bn6jf.mongodb.net/",
+    mongoUrl: config.mongo.uri,
     dbname: "sessions"
   }),
   secret: 'secret',
   resave: true,
   saveUninitialized: true
 }))
+
 
 initializePassport()
 app.use(passport.initialize())
@@ -49,8 +51,8 @@ const io = socketIO(httpServer);
 
 (async () => {
   try {
-    await mongoose.connect("mongodb+srv://Alstromg:320maVEZ@atlascluster.56bn6jf.mongodb.net/", {
-      dbName: "Productos",
+    await mongoose.connect(config.mongo.uri, {
+      dbName: config.mongo.dbName,
       useNewUrlParser: true, 
       useUnifiedTopology: true,
     });

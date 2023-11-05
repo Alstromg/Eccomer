@@ -1,10 +1,12 @@
 const passport = require("passport")
 const local = require("passport-local")
 const { createHash, isValidPassword } = require("../controladores/utils.js")
-const UserModel = require("../models/user.model.js")
+const UserModel = require("../dao/models/user.model.js")
 const GitHubStrategy = require('passport-github2')
-const cartModel = require("../models/cartModel.js")
+const cartModel = require("../dao/models/cartModel.js")
 const localStrategy = local.Strategy
+
+
 const initializePassport =() => {
     passport.use('register', new localStrategy({
     passReqToCallback: true,
@@ -48,17 +50,24 @@ passport.use('login', new localStrategy({
 passport.use('github', new GitHubStrategy({
     clientID: 'Iv1.4f822ce5bbef0583',
     clientSecret: 'a2b5e89373b06df83d95e582541a149bb3221e7b',
-    callbackURL: 'http://localhost:8080/api/sessions/githubcallback'
+    callbackURL: 'http://localhost:8080/api/sessions/githubcallback',
+    scope: ['user:email']
 }, async(accessToken, refreshToken, profile, done) =>{
+    console.log(profile)
     try{
         const user = await UserModel.findOne({email:profile._json.email})
         if(user) return done(null, user)
+        const cart = new cartModel();
+        await cart.save();
         const newUser = await UserModel.create({
             first_name: profile._json.name,
             last_name: '',
-            email: profile._json.email,
-            password: ''
+            email: profile.emails[0].value,
+            password: '',
+            role: 'user',
+            cart: cart._id
         })
+        console.log(newUser)
         return done(null, newUser)
     } catch(err){
         return done('Error con Git')

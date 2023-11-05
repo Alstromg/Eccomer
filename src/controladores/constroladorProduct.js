@@ -1,5 +1,7 @@
-const baseModel = require("../models/products");
+const products = require("../dao/models/products");
 
+
+//Funcion recorre todos los productos y pagina segun parametros
 const getProducts = async (req, res) => {
     try {
         const limit = req.query.limit || 10;
@@ -14,7 +16,7 @@ const getProducts = async (req, res) => {
         if (req.query.sort === 'asc') paginateOptions.sort = { price: 1 };
         if (req.query.sort === 'desc') paginateOptions.sort = { price: -1 };
         
-        const result = await baseModel.paginate(filterOptions, paginateOptions);
+        const result = await products.paginate(filterOptions, paginateOptions);
         
         let prevLink;
         if (!req.query.page) {
@@ -54,5 +56,58 @@ const getProducts = async (req, res) => {
         };
     }
 };
+//Funccion encuentra producto por su id
+const getProductsById = async (req, res) => {
+    const pid = req.params.pid
+    try{
+        const producto = await products.findById(pid)
+        if(producto === null){
+            return res.status(404).json({ status: "error", error: `Producti con id =${pid} no existe`})
+        }return res.status(200).json({status: "success", data: producto})
+ 
+    } catch(error){
+        return res.status(500).json({ status: "error", error: "Error interno del servidor" });       
+    }
+}
+//Crear un nuevo producto
+const postProducts = async (req, res) => {
+    try {
+        const { title, description, price, code, stock, category  } = req.body;
+        const nuevoProducto = new products({
+        title: title,
+        description: description,
+        price: price,
+        code:code ,
+        stock:stock,
+        category: category,
+        });
+        await nuevoProducto.save();
+        res.status(201).json({ message: "Producto creado exitosamente", producto: nuevoProducto });
+    } catch (error) {
+        res.status(500).json({ error: "Error al crear el producto" });
+    }
+};
+//Borrar un producto
+const deleteProductById = async (req, res) => {
+    const pid = req.params.pid;
+    try {
+        const productoBorrar = await baseModel.findById(pid);
+        if (productoBorrar === null) {
+            return res.status(404).json({ status: "error", error: `Producto con id = ${pid} no existe` });
+        } else {
+            await baseModel.deleteMany({_id: pid}); 
+            res.status(204).json(); 
+        }
+    } catch (error) {
+        console.error('Error al eliminar producto del carrito:', error);
+        res.status(500).json({ status: "error", error: "Error interno del servidor" });
+    }
+}
 
-module.exports = { getProducts };
+module.exports = { 
+    getProducts,
+    getProductsById, 
+    postProducts,
+    deleteProductById
+    
+ };
