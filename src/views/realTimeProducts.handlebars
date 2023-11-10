@@ -4,7 +4,7 @@
  <div>Descripccion<input  class="form-control" type="text" name="" id="description"></div>
  <div>Precio<input  class="form-control" type="number" name="" id="price"></div>
  <div>Codigo<input   class="form-control"type="text" name="" id="code"></div>
- <div>Codigo<input   class="form-control"type="text" name="" id="category"></div>
+ <div>Categoria<input   class="form-control"type="text" name="" id="category"></div>
  <div>Stock<input  class="form-control" type="number" name="" id="stock"></div>
 </form>
 <button type="button" class="btn btn-success"  id="createBtn">Crear Nuevo Producto</button>
@@ -23,7 +23,6 @@
 <tbody class="table-group-divider">
     {{#each products}}
     <tr>
-        <td><button class="btn btn-danger" onclick="agregarCarrito('{{../cart}}','{{this._id}}')" >Agregar al carrito</button></td>
         <td><button class="btn btn-danger" onclick="deleteProduct('{{this._id}}')">Eliminar</button></td>
         <td>{{this.title}}</td>
         <td>{{this.description}}</td>

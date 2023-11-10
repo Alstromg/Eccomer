@@ -7,14 +7,13 @@ document.getElementById("createBtn").addEventListener("click", () => {
     const description = document.getElementById('description').value;
     const price = document.getElementById('price').value;
     const code = document.getElementById('code').value;
-    const category = document.getElementById('category').value = '';
+    const category = document.getElementById('category').value;
     const stock = document.getElementById('stock').value;
-
+console.log(title,description, price, code,category,stock)
     if (!title || !description || !price || !code || !stock || !category) {
         alert("Todos los campos deben estar llenos.");
-        return;
+        return; 
     }
-
     const body = { 
         title,
         description,
@@ -23,7 +22,7 @@ document.getElementById("createBtn").addEventListener("click", () => {
         category,
         code,   
     };
-
+    console.log(body)
     fetch('/api/products', {
         method: 'post',
         body: JSON.stringify(body),

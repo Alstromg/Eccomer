@@ -52,13 +52,16 @@ passport.use('github', new GitHubStrategy({
     clientSecret: 'a2b5e89373b06df83d95e582541a149bb3221e7b',
     callbackURL: 'http://localhost:8080/api/sessions/githubcallback',
     scope: ['user:email']
-}, async(accessToken, refreshToken, profile, done) =>{
-    console.log(profile)
-    try{
-        const user = await UserModel.findOne({email:profile._json.email})
-        if(user) return done(null, user)
+}, async (accessToken, refreshToken, profile, done) => {
+    try {
+        const existingUser = await UserModel.findOne({ email: profile._json.email });
+        console.log(existingUser)
+        if (existingUser) {
+            return done(null, existingUser);
+        }
         const cart = new cartModel();
         await cart.save();
+
         const newUser = await UserModel.create({
             first_name: profile._json.name,
             last_name: '',
@@ -66,11 +69,10 @@ passport.use('github', new GitHubStrategy({
             password: '',
             role: 'user',
             cart: cart._id
-        })
-        console.log(newUser)
-        return done(null, newUser)
-    } catch(err){
-        return done('Error con Git')
+        });
+        return done(null, newUser);
+    } catch (err) {
+        return done(`Error con Git: ${err.message}`);
     }
 }))
 passport.serializeUser((user, done) =>{

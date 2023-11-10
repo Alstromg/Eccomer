@@ -1,23 +1,12 @@
-const products = require("../dao/models/products");
 
+const productsDAO = require("../dao/productDao")
 
 //Funcion recorre todos los productos y pagina segun parametros
 const getProducts = async (req, res) => {
     try {
-        const limit = req.query.limit || 10;
-        const page = req.query.page || 1;
-        const filterOptions = {};
-        
-        if (req.query.stock) filterOptions.stock = req.query.stock;
-        if (req.query.category) filterOptions.category = req.query.category;
-        
-        const paginateOptions = { lean: true, limit, page };
-        
-        if (req.query.sort === 'asc') paginateOptions.sort = { price: 1 };
-        if (req.query.sort === 'desc') paginateOptions.sort = { price: -1 };
-        
-        const result = await products.paginate(filterOptions, paginateOptions);
-        
+        const result = await productsDAO.getProducts(req.query);
+
+        // Lógica de generación de enlaces de paginación directamente aquí
         let prevLink;
         if (!req.query.page) {
             prevLink = `http://${req.hostname}:${8080}${req.originalUrl}?page=${result.prevPage}`;
@@ -25,7 +14,7 @@ const getProducts = async (req, res) => {
             const modifiedUrl = req.originalUrl.replace(`page=${req.query.page}`, `page=${result.prevPage}`);
             prevLink = `http://${req.hostname}:${8080}${modifiedUrl}`;
         }
-        
+
         let nextLink;
         if (!req.query.page) {
             nextLink = `http://${req.hostname}:${8080}${req.originalUrl}?page=${result.nextPage}`;
@@ -33,7 +22,7 @@ const getProducts = async (req, res) => {
             const modifiedUrl = req.originalUrl.replace(`page=${req.query.page}`, `page=${result.nextPage}`);
             nextLink = `http://${req.hostname}:${8080}${modifiedUrl}`;
         }
-        
+
         return {
             statusCode: 200,
             response: { 
@@ -58,56 +47,53 @@ const getProducts = async (req, res) => {
 };
 //Funccion encuentra producto por su id
 const getProductsById = async (req, res) => {
-    const pid = req.params.pid
-    try{
-        const producto = await products.findById(pid)
-        if(producto === null){
-            return res.status(404).json({ status: "error", error: `Producti con id =${pid} no existe`})
-        }return res.status(200).json({status: "success", data: producto})
- 
-    } catch(error){
-        return res.status(500).json({ status: "error", error: "Error interno del servidor" });       
-    }
-}
-//Crear un nuevo producto
-const postProducts = async (req, res) => {
+    const pid = req.params.pid;
     try {
-        const { title, description, price, code, stock, category  } = req.body;
-        const nuevoProducto = new products({
-        title: title,
-        description: description,
-        price: price,
-        code:code ,
-        stock:stock,
-        category: category,
-        });
-        await nuevoProducto.save();
-        res.status(201).json({ message: "Producto creado exitosamente", producto: nuevoProducto });
+        const producto = await productsDAO.getProductById(pid);
+        if (!producto) {
+            return res.status(404).json({ status: "error", error: `Producto con id = ${pid} no existe` });
+        }
+        return res.status(200).json({ status: "success", data: producto });
     } catch (error) {
-        res.status(500).json({ error: "Error al crear el producto" });
+        return res.status(500).json({ status: "error", error: "Error interno del servidor" });
     }
 };
-//Borrar un producto
+
+const postProducts = async (req, res) => {
+    try {
+        const { title, description, price, code, stock, category } = req.body;
+        const nuevoProducto = await productsDAO.createProduct({
+            title: title,
+            description: description,
+            price: price,
+            code: code,
+            stock: stock,
+            category: category,
+        });
+        res.status(201).json({ message: 'Producto creado exitosamente', producto: nuevoProducto });
+    } catch (error) {
+        res.status(500).json({ error: 'Error al crear el producto' });
+    }
+};
+
 const deleteProductById = async (req, res) => {
     const pid = req.params.pid;
     try {
-        const productoBorrar = await baseModel.findById(pid);
-        if (productoBorrar === null) {
+        const productoBorrar = await productsDAO.getProductById(pid);
+        if (!productoBorrar) {
             return res.status(404).json({ status: "error", error: `Producto con id = ${pid} no existe` });
-        } else {
-            await baseModel.deleteMany({_id: pid}); 
-            res.status(204).json(); 
         }
+        await productsDAO.deleteProduct(pid);
+        res.status(204).json(); 
     } catch (error) {
-        console.error('Error al eliminar producto del carrito:', error);
+        console.error('Error al eliminar producto:', error);
         res.status(500).json({ status: "error", error: "Error interno del servidor" });
     }
-}
+};
 
 module.exports = { 
     getProducts,
     getProductsById, 
     postProducts,
     deleteProductById
-    
- };
+};
