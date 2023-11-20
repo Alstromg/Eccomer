@@ -65,7 +65,7 @@ passport.use('github', new GitHubStrategy({
     scope: ['user:email']
 }, async (accessToken, refreshToken, profile, done) => {
     try {
-        const existingUser = await UserModel.findOne({ email: profile._json.email });
+        const existingUser = await UserModel.findOne({ email: profile.emails[0].value });
         console.log(existingUser)
         if (existingUser) {
             return done(null, existingUser);
