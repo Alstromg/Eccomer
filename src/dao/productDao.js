@@ -20,6 +20,23 @@ const getProductById = async (productId) => {
     return await products.findById(productId);
 };
 
+
+const editProduct = async (productid, updatedFields) => {
+    try {
+      const producto = await products.findById(productid);
+  
+      if (!producto) {
+        throw new Error(`Producto con id = ${productid} no encontrado`);
+      }
+      Object.assign(producto, updatedFields);
+  
+      await producto.save();
+  
+      return producto;
+    } catch (err) {
+      throw err;
+    }
+  }
 const createProduct = async (productData) => {
     const { title, description, price, code, stock, category } = productData;
     const newProduct = new products({
@@ -41,5 +58,6 @@ module.exports = {
     getProducts,
     getProductById,
     createProduct,
-    deleteProduct
+    deleteProduct,
+    editProduct
 };

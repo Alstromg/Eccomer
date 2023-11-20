@@ -9,7 +9,7 @@ mongo: {
 },
 admin:{
     adminEmail: process.env.emailAdm,
-    adminPass: process.env.adminPass
+    adminPass: process.env.passAdm
 },
 gitHub:{
     cliente: process.env.clientID,

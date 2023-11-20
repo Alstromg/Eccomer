@@ -37,7 +37,6 @@ const postCart = async (req, res) => {
 const postCartById = async (req, res) => {
   const cid = req.params.cid;
   const pid = req.params.pid;
-
   try {
     await cartDao.addProductToCart(cid, pid);
     res.status(200).json({ status: 'success', message: 'Producto agregado al carrito' });

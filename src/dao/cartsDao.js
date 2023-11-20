@@ -15,31 +15,31 @@ const createCart = async (items) => {
 };
 
 const addProductToCart = async (cid, pid) => {
-  const cart = await cartModel.findById(cid);
+  try {
+    const cart = await cartModel.findById(cid);
 
-  if (!cart) {
-    throw new Error(`Usuario con id=${cid} no existe`);
+    if (!cart) {
+      throw new Error(`Usuario con carrito de id=${cid} no existe`);
+    }
+
+    const productToAdd = await productModel.findById(pid);
+
+    if (!productToAdd) {
+      throw new Error(`Producto con id=${pid} no existe`);
+    }
+    const existingProduct = cart.products.find(item => item.product.equals(productToAdd._id));
+
+    if (existingProduct) {
+      existingProduct.quantity += 1;
+    } else {
+      cart.products.push({ product: pid, quantity: 1 });
+    }
+    await cart.save();
+    
+    return cart;
+  } catch (error) {
+    throw error;
   }
-
-  const productToAdd = await productModel.findById(pid);
-
-  if (!productToAdd) {
-    throw new Error(`Producto con id=${pid} no existe`);
-  }
-
-  const existingProductIndex = cart.products.findIndex((product) => product.product.toString() === pid);
-
-  if (existingProductIndex !== -1) {
-    cart.products[existingProductIndex].quantity += 1;
-  } else {
-    cart.products.push({
-      product: pid,
-      quantity: 1,
-    });
-  }
-  productToAdd.stock -= 1;
-  await productToAdd.save();
-  await cart.save();
 };
 
 const deleteProductFromCart = async (cid, pid) => {

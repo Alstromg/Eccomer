@@ -1,12 +1,9 @@
 
 const productsDAO = require("../dao/productDao")
 
-//Funcion recorre todos los productos y pagina segun parametros
 const getProducts = async (req, res) => {
     try {
         const result = await productsDAO.getProducts(req.query);
-
-        // Lógica de generación de enlaces de paginación directamente aquí
         let prevLink;
         if (!req.query.page) {
             prevLink = `http://${req.hostname}:${8080}${req.originalUrl}?page=${result.prevPage}`;
@@ -45,7 +42,7 @@ const getProducts = async (req, res) => {
         };
     }
 };
-//Funccion encuentra producto por su id
+
 const getProductsById = async (req, res) => {
     const pid = req.params.pid;
     try {
@@ -59,6 +56,23 @@ const getProductsById = async (req, res) => {
     }
 };
 
+const putProduct = async (req, res) => {
+    const pid = req.params.pid;
+    const { stock } = req.body; 
+  
+    try {
+      const producto = await productsDAO.editProduct(pid, { stock });
+  
+      if (!producto) {
+        return res.status(404).json({ status: "error", error: `Producto con id = ${pid} no existe` });
+      }
+  
+      return res.status(200).json({ status: "success", data: producto });
+    } catch (err) {
+      console.error('Error al editar el producto:', err);
+      return res.status(500).json({ status: "error", error: "Error interno del servidor" });
+    }
+  }
 const postProducts = async (req, res) => {
     try {
         const { title, description, price, code, stock, category } = req.body;
@@ -95,5 +109,6 @@ module.exports = {
     getProducts,
     getProductsById, 
     postProducts,
-    deleteProductById
+    deleteProductById,
+    putProduct
 };

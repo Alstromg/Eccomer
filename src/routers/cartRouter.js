@@ -1,6 +1,6 @@
 const  {Router}  = require('express')
 const constrolCarts = require("../controladores/constrolCarts")
-
+const controlTicket = require("../controladores/controlTicket")
 
 const router = Router()
 
@@ -9,6 +9,8 @@ const router = Router()
 router.get("/", constrolCarts.getAllCarts);
 
 router.get("/:cid", constrolCarts.getCartById);
+
+router.post("/:cid/purchaser", controlTicket.postTicket)
 
 router.post("/", constrolCarts.postCart )
 

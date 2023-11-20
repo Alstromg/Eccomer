@@ -5,6 +5,7 @@ const UserModel = require("../dao/models/user.model.js")
 const GitHubStrategy = require('passport-github2')
 const cartModel = require("../dao/models/cartModel.js")
 const localStrategy = local.Strategy
+const config = require('../config/config');
 
 
 const initializePassport =() => {
@@ -31,22 +32,32 @@ const initializePassport =() => {
 }))
  
 passport.use('login', new localStrategy({
-    usernameField :'email',
-
-}, async(username, password, done) => {
-    try{
-        const user = await UserModel.findOne({email: username})
-        if(!user){
-            return done(null, false)
+    usernameField: 'email',
+}, async (username, password, done) => {
+    try {
+        if (username === config.admin.adminEmail && password === config.admin.adminPass) {
+            const user = {
+                first_name: "Admin ",
+                last_name: "Coder",
+                email: config.admin.adminEmail,
+                role: "admin"
+            }
+            console.log("Admin Logeado");
+            return done(null, user);
         }
-        if(!isValidPassword(user, password)) return done(null,false)
-
-        return done(null, user)
-        
-    }catch(err){
-        return done(err)
+        const user = await UserModel.findOne({ email: username });
+        if (!user) {
+            return done(null, false);
+        }
+        if (!isValidPassword(user, password)) {
+            return done(null, false);
+        }
+        return done(null, user);
+    } catch (err) {
+        return done(err);
     }
-}))
+}));
+
 passport.use('github', new GitHubStrategy({
     clientID: 'Iv1.4f822ce5bbef0583',
     clientSecret: 'a2b5e89373b06df83d95e582541a149bb3221e7b',
@@ -75,14 +86,31 @@ passport.use('github', new GitHubStrategy({
         return done(`Error con Git: ${err.message}`);
     }
 }))
-passport.serializeUser((user, done) =>{
-    done(null, user._id)
-})
+passport.serializeUser((user, done) => {
+    if (user.role === 'admin') {
+      done(null, user);
+    } else {
+      done(null, user._id);
+    }
+  });
+  
 
-passport.deserializeUser(async (id, done) =>{
-    const user = await UserModel.findById(id)
-    done(null, user)
-})
+  passport.serializeUser((user, done) => {
+    if (user.role === 'admin') {
+      done(null, user);
+    } else {
+      done(null, user._id);
+    }
+  });
+  
+  passport.deserializeUser(async (serialized, done) => {
+    if (serialized.role === 'admin') {
+      done(null, serialized);
+    } else {
+      const user = await UserModel.findById(serialized);
+      done(null, user);
+    }
+  });
 }
 
 module.exports = initializePassport;

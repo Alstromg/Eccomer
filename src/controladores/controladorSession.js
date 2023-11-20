@@ -1,5 +1,6 @@
-const config = require('../config/config');
+
 const userDao = require('../dao/sessionDao');
+const config = require('../config/config');
 
 const getRegister = async (req, res) => {
   res.redirect('sessions/register');
@@ -16,7 +17,6 @@ const getLogin = (req, res) => {
 const postLogin = async (req, res) => {
   try {
     const user = await userDao.getUserByEmail(req.user.email);
-
     if (!user) {
       res.status(400).send({ status: 'error', error: 'Credenciales Inválidas' });
       return;
@@ -30,18 +30,6 @@ const postLogin = async (req, res) => {
       cart: user.cart,
       role: user.role,
     };
-
-    if (
-      user.email === config.admin.adminEmail &&
-      user.password === config.admin.adminPass
-    ) {
-      req.session.user = {
-        first_name: 'Administrador',
-        email: config.admin.adminEmail,
-        role: 'admin',
-      };
-    }
-
     res.redirect('/products');
   } catch (err) {
     console.error('Error en la autenticación:', err);

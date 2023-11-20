@@ -7,7 +7,7 @@ const {getView, getRealtimeProducts} = require("../controladores/controladorView
 
 const router = Router()
 
-router.get('/', privateRoutes ,getView)
+router.get('/' ,getView)
 
 router.get('/realtimeProducts', privateRoutes, getRealtimeProducts );
 
