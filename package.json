@@ -4,8 +4,8 @@
   "description": "Desafios",
   "main": "src/app.js",
   "scripts": {
-    "start": "node",
-    "dev": "nodemon",
+    "start": "nodemon src/app.js",
+    "dev": "nodemon src/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -25,6 +25,7 @@
     "express-session": "^1.17.3",
     "mongoose": "^7.5.2",
     "mongoose-paginate-v2": "^1.7.4",
+    "nodemon": "^3.0.1",
     "passport": "^0.6.0",
     "passport-github2": "^0.1.12",
     "passport-local": "^1.0.0",
