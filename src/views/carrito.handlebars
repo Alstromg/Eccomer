@@ -1,9 +1,13 @@
-<h2>Carrito</h2>
-<br>
+<form method="POST" action="/api/carts/{{cart._id}}/purchaser">
+    <h2>Carrito</h2>
+    <br>
+    <div>
+        {{#each cart.products}}
+            <h2>Producto{{product}}</h2>
+            <p>{{quantity}}</p>
+        {{/each}}
 
-<div>
-    
-            {{user.cart}}
-       
-    </table>
-</div>
+        <button type="submit">Comprar</button>
+    </div>
+</form>
+

@@ -2,7 +2,7 @@ const express = require('express');
 const http = require('http');
 const mongoose = require("mongoose")
 const socketIO = require('socket.io');
-const handlebars = require("express-handlebars")
+const exphbs = require("express-handlebars")
 const viewsRouter = require('./routers/view.router')
 const viewsCart = require('./routers/viewsCart')
 const cartRouter = require("./routers/cartRouter")
@@ -34,7 +34,13 @@ app.use(passport.session())
 
 app.use(express.urlencoded({extended:true}))
 app.use(express.static('./src/public'));
-app.engine('handlebars', handlebars.engine());
+const hbs = exphbs.create({
+  runtimeOptions: {
+    allowProtoPropertiesByDefault: true,
+    allowProtoMethodsByDefault: true,
+  },
+});
+app.engine('handlebars', hbs.engine);
 app.set('views', './src/views')
 app.set('view engine', 'handlebars');
 
