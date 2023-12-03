@@ -1,5 +1,9 @@
 
 const productsDAO = require("../dao/productDao")
+const {createError} =require ('../services/errors/custom_error.js')
+const EErros  = require ('../services/errors/enums.js')
+const generateErrorInfo =require ('../services/errors/info.js')
+
 
 const getProducts = async (req, res) => {
     try {
@@ -45,16 +49,25 @@ const getProducts = async (req, res) => {
 
 const getProductsById = async (req, res) => {
     const pid = req.params.pid;
+
     try {
+        console.log('Entrando en el bloque try');
         const producto = await productsDAO.getProductById(pid);
-        if (!producto) {
-            return res.status(404).json({ status: "error", error: `Producto con id = ${pid} no existe` });
-        }
         return res.status(200).json({ status: "success", data: producto });
-    } catch (error) {
-        return res.status(500).json({ status: "error", error: "Error interno del servidor" });
+    } catch (err) {
+        const customError = createError({
+            name: "Producto no encontrado",
+            cause: generateErrorInfo.generateInfo(pid),
+            message: "Error al buscar el producto",
+            code: EErros.INVALID_TYPES_ERROR
+        });
+        console.log('Lanzando el error',  err);
+        return res.status(500).json({ status: "error", error: customError });
     }
 };
+
+
+
 
 const putProduct = async (req, res) => {
     const pid = req.params.pid;
@@ -69,13 +82,20 @@ const putProduct = async (req, res) => {
   
       return res.status(200).json({ status: "success", data: producto });
     } catch (err) {
-      console.error('Error al editar el producto:', err);
-      return res.status(500).json({ status: "error", error: "Error interno del servidor" });
+        const customError = createError({
+            name: "Producto no encontrado",
+            cause: generateErrorInfo.generateInfo(pid),
+            message: "Error al buscar el producto",
+            code: EErros.INVALID_TYPES_ERROR
+        });
+        console.log('Lanzando el error',  err);
+        return res.status(500).json({ status: "error", error: customError });
     }
   }
 const postProducts = async (req, res) => {
+    const { title, description, price, code, stock, category } = req.body;
     try {
-        const { title, description, price, code, stock, category } = req.body;
+        
         const nuevoProducto = await productsDAO.createProduct({
             title: title,
             description: description,
@@ -86,24 +106,41 @@ const postProducts = async (req, res) => {
         });
         res.status(201).json({ message: 'Producto creado exitosamente', producto: nuevoProducto });
     } catch (error) {
-        res.status(500).json({ error: 'Error al crear el producto' });
+        const customError = createError({
+            name: "Producto no Agregado ",
+            cause: generateErrorInfo.generateInfopost(title),
+            message: "Error al agregar producto",
+            code: EErros.INVALID_TYPES_ERROR
+        });
+        console.log('Lanzando el error',  error);
+        return res.status(500).json({ status: "error", error: customError });
     }
 };
 
 const deleteProductById = async (req, res) => {
     const pid = req.params.pid;
+
     try {
         const productoBorrar = await productsDAO.getProductById(pid);
+
         if (!productoBorrar) {
-            return res.status(404).json({ status: "error", error: `Producto con id = ${pid} no existe` });
+            res.status(500).json( {status:'error'})
         }
+
         await productsDAO.deleteProduct(pid);
-        res.status(204).json(); 
+        res.status(204).json({ message: 'Producto eliminado exitosamente' });
     } catch (error) {
-        console.error('Error al eliminar producto:', error);
-        res.status(500).json({ status: "error", error: "Error interno del servidor" });
+        const customError = createError({
+            name: "Producto no encontrado",
+            cause: generateErrorInfo.generateInfo(pid),
+            message: "Error al buscar el producto",
+            code: EErros.INVALID_TYPES_ERROR
+        });
+        console.log('Lanzando el error',  error);
+        return res.status(500).json({ status: "error", error: customError });
     }
 };
+
 
 module.exports = { 
     getProducts,

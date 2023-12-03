@@ -15,8 +15,14 @@ const app = express();
 const passport = require('passport')
 const initializePassport = require('./config/passportConfigjs')
 const config = require('./config/config')
-
+const compression = require('express-compression')
+const errorHandler = require ('./middleware/error.js')
+const mockingRouter = require('./routers/mockingRouter.js')
 app.use(express.json());
+app.use(errorHandler)
+app.use(compression({
+  brotli:{enabled:true, zlib:{}}
+}))
 app.use(session({
   store: MongoStore.create({
     mongoUrl: config.mongo.uri,
@@ -50,6 +56,7 @@ app.use('/cart', viewsCart)
 app.use('/api/products', productRouter);
 app.use('/api/carts', cartRouter);
 app.use("/api/sessions", sessionRouter)
+app.use('/mockingproducts', mockingRouter)
 
 
 const httpServer = http.createServer(app);
