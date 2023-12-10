@@ -1,6 +1,7 @@
 
 const userDao = require('../dao/sessionDao');
 const config = require('../config/config');
+const logger = require('../logger')
 
 const getRegister = async (req, res) => {
   res.redirect('sessions/register');
@@ -32,7 +33,7 @@ const postLogin = async (req, res) => {
     };
     res.redirect('/products');
   } catch (err) {
-    console.error('Error en la autenticación:', err);
+    logger.error('Error en la autenticación:', err);
     res.status(500).json({ status: 'error', error: 'Error interno del servidor' });
   }
 };
@@ -58,7 +59,7 @@ const getGitHubCallback = async (req, res) => {
     console.log('Redireccionando a /products');
     res.redirect('/products');
   } catch (error) {
-    console.error('Error en la redirección después de GitHub callback:', error);
+    logger.error('Error en la redirección después de GitHub callback:', error);
     res.status(500).send('Internal Server Error');
   }
 };

@@ -1,4 +1,5 @@
 const productDao = require('../dao/viewDAO.JS');
+const logger = require('../logger')
 
 const getView = async (req, res) => {
     try {
@@ -28,7 +29,7 @@ const getView = async (req, res) => {
             res.status(500).json({ status: 'error', error: 'Error al obtener productos' });
         }
     } catch (err) {
-        console.error('Error al obtener productos:', err);
+        logger.error('Error al obtener productos:', err);
         res.status(500).json({ status: 'error', error: 'Error interno del servidor' });
     }
 };
@@ -42,7 +43,7 @@ const getRealtimeProducts = async (req, res) => {
             res.status(500).json({ status: 'error', error: 'Error al obtener productos en tiempo real' });
         }
     } catch (err) {
-        console.error('Error al obtener productos en tiempo real:', err);
+        logger.error('Error al obtener productos en tiempo real:', err);
         res.status(500).json({ status: 'error', error: 'Error interno del servidor' });
     }
 };

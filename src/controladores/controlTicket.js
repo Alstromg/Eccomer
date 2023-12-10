@@ -4,6 +4,7 @@ const cartDao = require('../dao/cartsDao');
 const ticketDao = require('../dao/ticketDao'); 
 const productsDAO = require("../dao/productDao")
 const UserModel = require('../dao/models/user.model');
+const logger = require('../logger')
 
 const postTicket = async (req, res) => {
     const cid = req.params.cid;
@@ -42,7 +43,7 @@ const postTicket = async (req, res) => {
 
       return res.status(201).json({ status: 'success', data: ticketDetails });
     } catch (err) {
-      console.error('Error al procesar el ticket:', err);
+      logger.error('Error al procesar el ticket:', err);
       return res.status(500).json({ status: 'error', error: 'Error interno del servidor', err });
     }
   };

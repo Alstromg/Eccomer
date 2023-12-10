@@ -18,6 +18,7 @@ const config = require('./config/config')
 const compression = require('express-compression')
 const errorHandler = require ('./middleware/error.js')
 const mockingRouter = require('./routers/mockingRouter.js')
+const logger = require('./logger.js')
 app.use(express.json());
 app.use(errorHandler)
 app.use(compression({
@@ -69,10 +70,10 @@ const io = socketIO(httpServer);
       useNewUrlParser: true, 
       useUnifiedTopology: true,
     });
-    httpServer.listen(8080, () => console.log("Servidor en línea"));
+    httpServer.listen(8080, () => logger.info("Servidor en línea"));
     
   } catch (err) {
-    console.error("Error al conectar a la base de datos:", err.message);
+    logger.error("Error al conectar a la base de datos:", err.message);
   }
 })();
 

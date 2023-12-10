@@ -1,4 +1,4 @@
-
+const logger = require('../logger')
 const socket = io();
 const table = document.getElementById("realProductsTable");
 
@@ -9,7 +9,7 @@ document.getElementById("createBtn").addEventListener("click", () => {
     const code = document.getElementById('code').value;
     const category = document.getElementById('category').value;
     const stock = document.getElementById('stock').value;
-console.log(title,description, price, code,category,stock)
+    logger.info(title,description, price, code,category,stock)
     if (!title || !description || !price || !code || !stock || !category) {
         alert("Todos los campos deben estar llenos.");
         return; 
@@ -22,7 +22,7 @@ console.log(title,description, price, code,category,stock)
         category,
         code,   
     };
-    console.log(body)
+    logger.info(body)
     fetch('/api/products', {
         method: 'post',
         body: JSON.stringify(body),

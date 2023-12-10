@@ -3,7 +3,7 @@ const productsDAO = require("../dao/productDao")
 const {createError} =require ('../services/errors/custom_error.js')
 const EErros  = require ('../services/errors/enums.js')
 const generateErrorInfo =require ('../services/errors/info.js')
-
+const logger = require('../logger')
 
 const getProducts = async (req, res) => {
     try {
@@ -51,7 +51,6 @@ const getProductsById = async (req, res) => {
     const pid = req.params.pid;
 
     try {
-        console.log('Entrando en el bloque try');
         const producto = await productsDAO.getProductById(pid);
         return res.status(200).json({ status: "success", data: producto });
     } catch (err) {
@@ -61,7 +60,7 @@ const getProductsById = async (req, res) => {
             message: "Error al buscar el producto",
             code: EErros.INVALID_TYPES_ERROR
         });
-        console.log('Lanzando el error',  err);
+        logger.error('Lanzando el error',  err);
         return res.status(500).json({ status: "error", error: customError });
     }
 };
@@ -88,7 +87,7 @@ const putProduct = async (req, res) => {
             message: "Error al buscar el producto",
             code: EErros.INVALID_TYPES_ERROR
         });
-        console.log('Lanzando el error',  err);
+        logger.error('Lanzando el error',  err);
         return res.status(500).json({ status: "error", error: customError });
     }
   }
@@ -112,7 +111,7 @@ const postProducts = async (req, res) => {
             message: "Error al agregar producto",
             code: EErros.INVALID_TYPES_ERROR
         });
-        console.log('Lanzando el error',  error);
+        logger.error('Lanzando el error',  err);
         return res.status(500).json({ status: "error", error: customError });
     }
 };
@@ -136,7 +135,7 @@ const deleteProductById = async (req, res) => {
             message: "Error al buscar el producto",
             code: EErros.INVALID_TYPES_ERROR
         });
-        console.log('Lanzando el error',  error);
+        logger.error('Lanzando el error',  err);
         return res.status(500).json({ status: "error", error: customError });
     }
 };
