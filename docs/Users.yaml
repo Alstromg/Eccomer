@@ -1,0 +1,143 @@
+paths:
+  /products:
+    get:
+      summary: Obtiene todos los productos existentes
+      tags:
+        - Products
+      responses: 
+        "200":
+          description: Usuarios Obtenidos Correctamente
+          content: 
+            aplication/json:
+              schema:
+                type: array
+                items:
+                $ref: '#/components/schemas/Product'
+        "500":
+          description: Error interno en el servidor
+    post:
+      summary: Crear un nuevo producto
+      tags:
+        - Products
+      requestBody: 
+        required: true
+        content:
+          aplication/json:
+            schema:
+              type: object
+              properties:
+                title: 
+                  type: number
+                  required: true
+                description: 
+                  type: string
+                price: 
+                  type: number
+                thumbnail: 
+                  type: string
+                code: 
+                  type: string
+                  required: true 
+                category: 
+                  type: string
+                  required: true
+                stock: 
+                  type: number
+                  required: true
+        "200":
+          description: Usuarios Obtenidos Correctamente
+          content:
+            aplication/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+        "500":
+          description: Error interno en el servidor
+  /products/{productId}:
+    get:
+      tags:
+        - Products
+      summary: Busca el producto por su ID
+      parameters:
+        - name: productId
+          in: path
+          required: true
+          description: ID del producto
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Producto encontrado
+          content:
+            aplication/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+    put:
+      tags:
+        - Products
+      summary: Editar producto por su ID
+      parameters:
+        - name: productId
+          in: path
+          required: true
+          description: ID del producto
+          schema: 
+            type: string
+      requestBody: 
+        required: true
+        content:
+          aplication/json:
+            schema:
+              type: object
+              properties:
+                stock: 
+                  type: number
+                  required: true
+      responses:
+        '200':
+          description: Stock Editado
+          content: 
+            aplication/json:
+              schema:
+              $ref: '#components/schemas/Product'
+    delete:
+      tags:
+        - Products
+      summary: Elemina un producto
+      parameters: 
+        - name: productID
+          in: path
+          required: true
+          description: ID del producto a eliminar
+          schema: 
+            type: string
+      responses: 
+        '200':
+          description: Producto Borrado
+          content:
+            aplication/json:
+              schema:
+                $ref: '#components/schemas/Product'   
+components:
+  schemas:
+    Product:
+      type: object
+      properties:
+        title: 
+          type: number
+        description: 
+          type: string
+        price: 
+          type: number
+        thumbnail: 
+          type: string
+        code: 
+          type: string 
+        category: 
+          type: string
+        stock: 
+          type: number
+      required:
+        -code
+        -stock
+        -title
+        -category

@@ -1,0 +1,195 @@
+paths:
+  /carts:
+    get:
+      summary: Obtiene todos los Carritos de compras existentes
+      tags:
+        - Carts
+      responses:
+        "200":
+          description: Carritos de compras obtenidos correctamente
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Carts'
+        "500":
+          description: Error interno en el servidor
+    post:
+      summary: Crear un nuevo carrito
+      tags:
+        - Carts
+      requestBody: 
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                products:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      product:
+                        type: string
+                      quantity: 
+                        type: number
+      responses:
+        "200":
+          description: Carrito creado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Carts'
+        "500":
+          description: Error interno en el servidor
+  /carts/{cartsId}:
+    get:
+      tags:
+      - Carts
+      summary: Busca Carrito por su ID
+      parameters: 
+      - name: cartsId
+        in: path
+        required: true
+        description: ID del carrito
+        schema: 
+        type: string
+      responses:
+        '200':
+          description: Carrito Encontrado
+          content:
+            aplication/json:
+              schema:
+                $ref: '#/components/schemas/Carts'
+    put:
+      tags:
+        - Carts
+      summary: Editar carrito por su ID
+      parameters:
+        - name: cartsId
+          in: path
+          required: true
+          description: ID del carrito
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                product:
+                  type: string
+                quantity:
+                  type: number
+      responses:
+        '200':
+          description: Carrito editado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Carts'
+  /carts/{cartsId}/products/{productsId}:
+    post:
+      tags:
+        - Carts
+      summary: Crear producto en carrito
+      parameters:
+        - name: productId
+          in: path
+          required: true
+          description: ID del producto a agregar
+          schema:
+            type: string
+        - name: cartsId
+          in: path
+          required: true
+          description: ID del carrito al que se agregará el producto
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Producto agregado al carrito
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Carts'
+        '500':
+          description: Error interno en el servidor
+    delete:
+      tags:
+        - Carts
+      summary: Borrar un producto del carrito
+      parameters:
+        - name: productId
+          in: path
+          required: true
+          description: ID del producto a borrar del carrito
+          schema:
+            type: string
+        - name: cartsId
+          in: path
+          required: true
+          description: ID del carrito 
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Producto borrado del carrito
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Carts'
+        '500':
+          description: Error interno en el servidor
+    put:
+      tags:
+        - Carts
+      summary: Crear producto en carrito
+      parameters:
+        - name: productId
+          in: path
+          required: true
+          description: ID del producto a agregar
+          schema:
+            type: string
+        - name: cartsId
+          in: path
+          required: true
+          description: ID del carrito al que se agregará el producto
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          aplication/json:
+            schema:
+              type: object
+              properties:
+                quanty:
+                  type: number
+                  required: true
+      responses:
+        '200':
+          description: Cantidad del producto en el carrito editado
+          content: 
+            aplication/json:
+              schema:
+              $ref: '#components/schemas/Product'   
+components:
+  schemas:
+    Carts:
+      type: object
+      properties:
+        products:
+          type: array
+          items:
+            type: object
+            properties:
+              product:
+                type: string
+              quantity:
+                type: number

@@ -19,6 +19,10 @@ const compression = require('express-compression')
 const errorHandler = require ('./middleware/error.js')
 const mockingRouter = require('./routers/mockingRouter.js')
 const logger = require('./logger.js')
+const swaggerJSDoc = require("swagger-jsdoc")
+const swaggerUiExpress = require("swagger-ui-express")
+
+
 app.use(express.json());
 app.use(errorHandler)
 app.use(compression({
@@ -62,7 +66,6 @@ app.use('/mockingproducts', mockingRouter)
 
 const httpServer = http.createServer(app);
 const io = socketIO(httpServer);
-
 (async () => {
   try {
     await mongoose.connect(config.mongo.uri, {
@@ -76,6 +79,18 @@ const io = socketIO(httpServer);
     logger.error("Error al conectar a la base de datos:", err.message);
   }
 })();
+const swaggerOption = {
+  definition:{
+    openapi: "3.0.1",
+    info: {
+      title: 'Documentaccion Eccomer',
+      description: 'Node.js'
+    }
+  },
+  apis: ['./docs/**/*.yaml']
+}
+const specs = swaggerJSDoc(swaggerOption)
+app.use('/docs', swaggerUiExpress.serve, swaggerUiExpress.setup(specs) )
 
 io.on("connection", socket => {
   socket.on("productList", data => {
