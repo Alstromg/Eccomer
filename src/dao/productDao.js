@@ -38,7 +38,7 @@ const editProduct = async (productid, updatedFields) => {
     }
   }
 const createProduct = async (productData) => {
-    const { title, description, price, code, stock, category } = productData;
+    const { title, description, price, code, stock, category, owner } = productData;
     const newProduct = new products({
         title: title,
         description: description,
@@ -46,6 +46,7 @@ const createProduct = async (productData) => {
         code: code,
         stock: stock,
         category: category,
+        owner: owner
     });
     return await newProduct.save();
 };
@@ -54,10 +55,11 @@ const deleteProduct = async (productId) => {
     return await products.deleteOne({ _id: productId });
 };
 
+
 module.exports = {
     getProducts,
     getProductById,
     createProduct,
     deleteProduct,
-    editProduct
+    editProduct,
 };

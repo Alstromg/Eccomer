@@ -66,3 +66,200 @@
 {"level":"info","message":"Servidor en línea"}
 {"level":"info","message":"Servidor en línea"}
 {"level":"info","message":"Servidor en línea"}
+{"level":"info","message":"Servidor en línea"}
+{"level":"info","message":"Admin logeado"}
+{"level":"warning","message":"Usuario No autorizado"}
+{"level":"info","message":"Servidor en línea"}
+{"level":"warning","message":"Usuario No autorizado"}
+{"level":"info","message":"Servidor en línea"}
+{"level":"info","message":"Servidor en línea"}
+{"level":"warning","message":"Usuario No autorizado"}
+{"level":"warning","message":"Usuario No autorizado"}
+{"level":"warning","message":"Usuario No autorizado"}
+{"level":"info","message":"Servidor en línea"}
+{"level":"info","message":"Servidor en línea"}
+{"level":"info","message":"Servidor en línea"}
+{"level":"info","message":"user logeado"}
+{"level":"info","message":"user logeado"}
+{"level":"warning","message":"Usuario no autorizado"}
+{"level":"info","message":"user logeado"}
+{"level":"info","message":"Servidor en línea"}
+{"level":"info","message":"user logeado"}
+{"level":"info","message":"Servidor en línea"}
+{"level":"info","message":"Servidor en línea"}
+{"level":"info","message":"Servidor en línea"}
+{"level":"info","message":"Servidor en línea"}
+{"level":"info","message":"Servidor en línea"}
+{"level":"info","message":"Servidor en línea"}
+{"level":"info","message":"Servidor en línea"}
+{"level":"info","message":"Servidor en línea"}
+{"level":"info","message":"Servidor en línea"}
+{"level":"info","message":"Servidor en línea"}
+{"level":"info","message":"Servidor en línea"}
+{"level":"info","message":"Servidor en línea"}
+{"level":"info","message":"Servidor en línea"}
+{"level":"info","message":"Servidor en línea"}
+{"level":"info","message":"premium logeado"}
+{"level":"info","message":"premium logeado"}
+{"level":"info","message":"Servidor en línea"}
+{"level":"info","message":"Servidor en línea"}
+{"level":"info","message":"Servidor en línea"}
+{"level":"info","message":"premium logeado"}
+{"level":"error","message":"Error al obtener productos en tiempo real: productDao.getRealtimeProductsByOwner is not a function","stack":"TypeError: productDao.getRealtimeProductsByOwner is not a function\n    at getRealtimeProducts (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\src\\controladores\\controladorView.js:42:41)\n    at Layer.handle [as handle_request] (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\route.js:144:13)\n    at C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\src\\middleware\\auth.middleware.js:15:14\n    at Layer.handle [as handle_request] (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\route.js:144:13)\n    at Route.dispatch (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\route.js:114:3)\n    at Layer.handle [as handle_request] (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\index.js:284:15\n    at Function.process_params (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\index.js:346:12)"}
+{"level":"info","message":"premium logeado"}
+{"level":"error","message":"Error al obtener productos en tiempo real: productDao.getRealtimeProductsByOwner is not a function","stack":"TypeError: productDao.getRealtimeProductsByOwner is not a function\n    at getRealtimeProducts (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\src\\controladores\\controladorView.js:42:41)\n    at Layer.handle [as handle_request] (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\route.js:144:13)\n    at C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\src\\middleware\\auth.middleware.js:15:14\n    at Layer.handle [as handle_request] (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\route.js:144:13)\n    at Route.dispatch (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\route.js:114:3)\n    at Layer.handle [as handle_request] (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\index.js:284:15\n    at Function.process_params (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\index.js:346:12)"}
+{"level":"info","message":"premium logeado"}
+{"level":"info","message":"premium logeado"}
+{"level":"info","message":"premium logeado"}
+{"level":"error","message":"Error al obtener productos en tiempo real: productDao.getRealtimeProductsByOwner is not a function","stack":"TypeError: productDao.getRealtimeProductsByOwner is not a function\n    at getRealtimeProducts (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\src\\controladores\\controladorView.js:42:41)\n    at Layer.handle [as handle_request] (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\route.js:144:13)\n    at C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\src\\middleware\\auth.middleware.js:15:14\n    at Layer.handle [as handle_request] (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\route.js:144:13)\n    at Route.dispatch (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\route.js:114:3)\n    at Layer.handle [as handle_request] (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\index.js:284:15\n    at Function.process_params (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\index.js:346:12)"}
+{"level":"info","message":"premium logeado"}
+{"level":"error","message":"Error al obtener productos en tiempo real: productDao.getRealtimeProductsByOwner is not a function","stack":"TypeError: productDao.getRealtimeProductsByOwner is not a function\n    at getRealtimeProducts (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\src\\controladores\\controladorView.js:42:41)\n    at Layer.handle [as handle_request] (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\route.js:144:13)\n    at C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\src\\middleware\\auth.middleware.js:15:14\n    at Layer.handle [as handle_request] (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\route.js:144:13)\n    at Route.dispatch (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\route.js:114:3)\n    at Layer.handle [as handle_request] (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\index.js:284:15\n    at Function.process_params (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\index.js:346:12)"}
+{"level":"info","message":"Servidor en línea"}
+{"level":"info","message":"premium logeado"}
+{"level":"error","message":"Error al obtener productos en tiempo real: productDao.getRealtimeProductsByOwner is not a function","stack":"TypeError: productDao.getRealtimeProductsByOwner is not a function\n    at getRealtimeProducts (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\src\\controladores\\controladorView.js:43:41)\n    at Layer.handle [as handle_request] (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\route.js:144:13)\n    at C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\src\\middleware\\auth.middleware.js:15:14\n    at Layer.handle [as handle_request] (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\route.js:144:13)\n    at Route.dispatch (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\route.js:114:3)\n    at Layer.handle [as handle_request] (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\index.js:284:15\n    at Function.process_params (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\index.js:346:12)"}
+{"level":"info","message":"Servidor en línea"}
+{"level":"info","message":"Servidor en línea"}
+{"level":"info","message":"premium logeado"}
+{"level":"error","message":"Error al obtener productos en tiempo real: productDao.getRealtimeProductsByOwner is not a function","stack":"TypeError: productDao.getRealtimeProductsByOwner is not a function\n    at getRealtimeProducts (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\src\\controladores\\controladorView.js:43:41)\n    at Layer.handle [as handle_request] (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\route.js:144:13)\n    at C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\src\\middleware\\auth.middleware.js:15:14\n    at Layer.handle [as handle_request] (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\route.js:144:13)\n    at Route.dispatch (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\route.js:114:3)\n    at Layer.handle [as handle_request] (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\index.js:284:15\n    at Function.process_params (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\index.js:346:12)"}
+{"level":"info","message":"premium logeado"}
+{"level":"error","message":"Error al obtener productos en tiempo real: productDao.getRealtimeProductsByOwner is not a function","stack":"TypeError: productDao.getRealtimeProductsByOwner is not a function\n    at getRealtimeProducts (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\src\\controladores\\controladorView.js:43:41)\n    at Layer.handle [as handle_request] (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\route.js:144:13)\n    at C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\src\\middleware\\auth.middleware.js:15:14\n    at Layer.handle [as handle_request] (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\route.js:144:13)\n    at Route.dispatch (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\route.js:114:3)\n    at Layer.handle [as handle_request] (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\index.js:284:15\n    at Function.process_params (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\index.js:346:12)"}
+{"level":"info","message":"Servidor en línea"}
+{"level":"info","message":"premium logeado"}
+{"level":"error","message":"Error al obtener productos en tiempo real: productDao.getRealtimeProductsByOwner is not a function","stack":"TypeError: productDao.getRealtimeProductsByOwner is not a function\n    at getRealtimeProducts (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\src\\controladores\\controladorView.js:43:41)\n    at Layer.handle [as handle_request] (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\route.js:144:13)\n    at C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\src\\middleware\\auth.middleware.js:15:14\n    at Layer.handle [as handle_request] (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\route.js:144:13)\n    at Route.dispatch (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\route.js:114:3)\n    at Layer.handle [as handle_request] (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\index.js:284:15\n    at Function.process_params (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\index.js:346:12)"}
+{"level":"info","message":"Servidor en línea"}
+{"level":"info","message":"premium logeado"}
+{"level":"error","message":"Error al obtener productos en tiempo real: productDao.getRealtimeProductsByOwner is not a function","stack":"TypeError: productDao.getRealtimeProductsByOwner is not a function\n    at getRealtimeProducts (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\src\\controladores\\controladorView.js:40:41)\n    at Layer.handle [as handle_request] (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\route.js:144:13)\n    at C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\src\\middleware\\auth.middleware.js:15:14\n    at Layer.handle [as handle_request] (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\route.js:144:13)\n    at Route.dispatch (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\route.js:114:3)\n    at Layer.handle [as handle_request] (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\index.js:284:15\n    at Function.process_params (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\index.js:346:12)"}
+{"level":"info","message":"Servidor en línea"}
+{"level":"info","message":"premium logeado"}
+{"level":"error","message":"Error al obtener productos en tiempo real: productDao.getRealtimeProductsByOwner is not a function","stack":"TypeError: productDao.getRealtimeProductsByOwner is not a function\n    at getRealtimeProducts (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\src\\controladores\\controladorView.js:42:41)\n    at Layer.handle [as handle_request] (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\route.js:144:13)\n    at C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\src\\middleware\\auth.middleware.js:15:14\n    at Layer.handle [as handle_request] (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\route.js:144:13)\n    at Route.dispatch (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\route.js:114:3)\n    at Layer.handle [as handle_request] (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\index.js:284:15\n    at Function.process_params (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\index.js:346:12)"}
+{"level":"info","message":"premium logeado"}
+{"level":"error","message":"Error al obtener productos en tiempo real: productDao.getRealtimeProductsByOwner is not a function","stack":"TypeError: productDao.getRealtimeProductsByOwner is not a function\n    at getRealtimeProducts (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\src\\controladores\\controladorView.js:42:41)\n    at Layer.handle [as handle_request] (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\route.js:144:13)\n    at C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\src\\middleware\\auth.middleware.js:15:14\n    at Layer.handle [as handle_request] (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\route.js:144:13)\n    at Route.dispatch (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\route.js:114:3)\n    at Layer.handle [as handle_request] (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\index.js:284:15\n    at Function.process_params (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\index.js:346:12)"}
+{"level":"info","message":"Servidor en línea"}
+{"level":"info","message":"Servidor en línea"}
+{"level":"info","message":"Servidor en línea"}
+{"level":"info","message":"Servidor en línea"}
+{"level":"info","message":"premium logeado"}
+{"level":"info","message":"Servidor en línea"}
+{"level":"info","message":"premium logeado"}
+{"level":"info","message":"premium logeado"}
+{"level":"info","message":"premium logeado"}
+{"level":"info","message":"Servidor en línea"}
+{"level":"info","message":"premium logeado"}
+{"level":"info","message":"premium logeado"}
+{"level":"info","message":"premium logeado"}
+{"level":"info","message":"Servidor en línea"}
+{"level":"info","message":"premium logeado"}
+{"level":"info","message":"premium logeado"}
+{"level":"info","message":"Servidor en línea"}
+{"level":"info","message":"premium logeado"}
+{"level":"info","message":"premium logeado"}
+{"level":"info","message":"Servidor en línea"}
+{"level":"info","message":"premium logeado"}
+{"level":"info","message":"Servidor en línea"}
+{"level":"info","message":"premium logeado"}
+{"level":"info","message":"premium logeado"}
+{"level":"info","message":"Servidor en línea"}
+{"level":"info","message":"premium logeado"}
+{"level":"info","message":"Servidor en línea"}
+{"level":"info","message":"premium logeado"}
+{"level":"info","message":"Servidor en línea"}
+{"level":"info","message":"Servidor en línea"}
+{"level":"info","message":"premium logeado"}
+{"level":"info","message":"premium logeado"}
+{"level":"info","message":"premium logeado"}
+{"level":"info","message":"premium logeado"}
+{"level":"info","message":"premium logeado"}
+{"level":"info","message":"premium logeado"}
+{"level":"info","message":"premium logeado"}
+{"level":"info","message":"premium logeado"}
+{"level":"info","message":"Servidor en línea"}
+{"level":"info","message":"premium logeado"}
+{"level":"info","message":"premium logeado"}
+{"level":"info","message":"premium logeado"}
+{"level":"info","message":"premium logeado"}
+{"level":"info","message":"premium logeado"}
+{"level":"info","message":"Servidor en línea"}
+{"level":"info","message":"Servidor en línea"}
+{"level":"info","message":"Servidor en línea"}
+{"level":"info","message":"premium logeado"}
+{"level":"info","message":"premium logeado"}
+{"level":"info","message":"premium logeado"}
+{"level":"info","message":"premium logeado"}
+{"level":"info","message":"premium logeado"}
+{"level":"info","message":"premium logeado"}
+{"level":"info","message":"premium logeado"}
+{"level":"info","message":"premium logeado"}
+{"level":"info","message":"premium logeado"}
+{"level":"info","message":"premium logeado"}
+{"level":"info","message":"premium logeado"}
+{"level":"info","message":"premium logeado"}
+{"level":"info","message":"premium logeado"}
+{"level":"info","message":"premium logeado"}
+{"level":"info","message":"premium logeado"}
+{"level":"info","message":"premium logeado"}
+{"level":"info","message":"Servidor en línea"}
+{"level":"info","message":"premium logeado"}
+{"code":11000,"index":0,"keyPattern":{"title":1},"keyValue":{"title":"Helado"},"level":"error","message":"Lanzando el error E11000 duplicate key error collection: Productos.products index: title_1 dup key: { title: \"Helado\" }","stack":"MongoServerError: E11000 duplicate key error collection: Productos.products index: title_1 dup key: { title: \"Helado\" }\n    at C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\mongodb\\lib\\operations\\insert.js:50:33\n    at C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\mongodb\\lib\\operations\\command.js:84:64\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"}
+{"level":"info","message":"premium logeado"}
+{"level":"info","message":"premium logeado"}
+{"level":"info","message":"premium logeado"}
+{"level":"info","message":"Servidor en línea"}
+{"level":"info","message":"Servidor en línea"}
+{"level":"info","message":"Servidor en línea"}
+{"level":"info","message":"Servidor en línea"}
+{"level":"info","message":"premium logeado"}
+{"level":"info","message":"admin logeado"}
+{"level":"info","message":"admin logeado"}
+{"level":"info","message":"premium logeado"}
+{"level":"info","message":"premium logeado"}
+{"level":"info","message":"premium logeado"}
+{"level":"info","message":"Servidor en línea"}
+{"level":"info","message":"Servidor en línea"}
+{"level":"info","message":"premium logeado"}
+{"level":"info","message":"premium logeado"}
+{"level":"info","message":"premium logeado"}
+{"level":"info","message":"premium logeado"}
+{"level":"info","message":"premium logeado"}
+{"level":"info","message":"Servidor en línea"}
+{"level":"info","message":"Servidor en línea"}
+{"level":"info","message":"premium logeado"}
+{"level":"info","message":"Servidor en línea"}
+{"code":11000,"index":0,"keyPattern":{"code":1},"keyValue":{"code":"13131313"},"level":"error","message":"Lanzando el error E11000 duplicate key error collection: Productos.products index: code_1 dup key: { code: \"13131313\" }","stack":"MongoServerError: E11000 duplicate key error collection: Productos.products index: code_1 dup key: { code: \"13131313\" }\n    at C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\mongodb\\lib\\operations\\insert.js:50:33\n    at C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\mongodb\\lib\\operations\\command.js:84:64\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"}
+{"level":"info","message":"premium logeado"}
+{"level":"info","message":"Servidor en línea"}
+{"level":"info","message":"Servidor en línea"}
+{"level":"info","message":"premium logeado"}
+{"level":"info","message":"Servidor en línea"}
+{"_message":"products validation failed","errors":{"category":{"kind":"required","message":"Path `category` is required.","name":"ValidatorError","path":"category","properties":{"message":"Path `category` is required.","path":"category","type":"required","value":""},"value":""}},"level":"error","message":"Lanzando el error products validation failed: category: Path `category` is required.","stack":"ValidationError: products validation failed: category: Path `category` is required.\n    at Document.invalidate (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\mongoose\\lib\\document.js:3166:32)\n    at C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\mongoose\\lib\\document.js:2959:17\n    at C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\mongoose\\lib\\schematype.js:1368:9\n    at process.processTicksAndRejections (node:internal/process/task_queues:77:11)"}
+{"level":"info","message":"Servidor en línea"}
+{"level":"info","message":"premium logeado"}
+{"level":"info","message":"Servidor en línea"}
+{"level":"info","message":"premium logeado"}
+{"level":"info","message":"Servidor en línea"}
+{"level":"info","message":"premium logeado"}
+{"level":"info","message":"premium logeado"}
+{"level":"info","message":"admin logeado"}
+{"level":"info","message":"admin logeado"}
+{"level":"info","message":"admin logeado"}
+{"level":"info","message":"Servidor en línea"}
+{"level":"info","message":"Servidor en línea"}
+{"level":"info","message":"admin logeado"}
+{"level":"error","message":"Error al obtener productos en tiempo real: productDao.getAllProducts is not a function","stack":"TypeError: productDao.getAllProducts is not a function\n    at getRealtimeProducts (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\src\\controladores\\controladorView.js:47:56)\n    at Layer.handle [as handle_request] (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\route.js:144:13)\n    at C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\src\\middleware\\auth.middleware.js:15:14\n    at Layer.handle [as handle_request] (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\route.js:144:13)\n    at Route.dispatch (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\route.js:114:3)\n    at Layer.handle [as handle_request] (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\index.js:284:15\n    at Function.process_params (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\index.js:346:12)"}
+{"level":"info","message":"admin logeado"}
+{"level":"error","message":"Error al obtener productos en tiempo real: productDao.getAllProducts is not a function","stack":"TypeError: productDao.getAllProducts is not a function\n    at getRealtimeProducts (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\src\\controladores\\controladorView.js:47:56)\n    at Layer.handle [as handle_request] (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\route.js:144:13)\n    at C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\src\\middleware\\auth.middleware.js:15:14\n    at Layer.handle [as handle_request] (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\route.js:144:13)\n    at Route.dispatch (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\route.js:114:3)\n    at Layer.handle [as handle_request] (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\index.js:284:15\n    at Function.process_params (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\index.js:346:12)"}
+{"level":"info","message":"Servidor en línea"}
+{"level":"info","message":"admin logeado"}
+{"level":"error","message":"Error al obtener productos en tiempo real: Cannot read properties of undefined (reading 'limit')","stack":"TypeError: Cannot read properties of undefined (reading 'limit')\n    at Object.getProducts (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\src\\dao\\viewDAO.JS:4:25)\n    at getRealtimeProducts (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\src\\controladores\\controladorView.js:47:56)\n    at Layer.handle [as handle_request] (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\route.js:144:13)\n    at C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\src\\middleware\\auth.middleware.js:15:14\n    at Layer.handle [as handle_request] (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\route.js:144:13)\n    at Route.dispatch (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\route.js:114:3)\n    at Layer.handle [as handle_request] (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\index.js:284:15"}
+{"level":"info","message":"admin logeado"}
+{"level":"error","message":"Error al obtener productos en tiempo real: Cannot read properties of undefined (reading 'limit')","stack":"TypeError: Cannot read properties of undefined (reading 'limit')\n    at Object.getProducts (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\src\\dao\\viewDAO.JS:4:25)\n    at getRealtimeProducts (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\src\\controladores\\controladorView.js:47:56)\n    at Layer.handle [as handle_request] (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\route.js:144:13)\n    at C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\src\\middleware\\auth.middleware.js:15:14\n    at Layer.handle [as handle_request] (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\route.js:144:13)\n    at Route.dispatch (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\route.js:114:3)\n    at Layer.handle [as handle_request] (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\index.js:284:15"}
+{"level":"info","message":"admin logeado"}
+{"level":"error","message":"Error al obtener productos en tiempo real: Cannot read properties of undefined (reading 'limit')","stack":"TypeError: Cannot read properties of undefined (reading 'limit')\n    at Object.getProducts (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\src\\dao\\viewDAO.JS:4:25)\n    at getRealtimeProducts (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\src\\controladores\\controladorView.js:47:56)\n    at Layer.handle [as handle_request] (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\route.js:144:13)\n    at C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\src\\middleware\\auth.middleware.js:15:14\n    at Layer.handle [as handle_request] (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\route.js:144:13)\n    at Route.dispatch (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\route.js:114:3)\n    at Layer.handle [as handle_request] (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\index.js:284:15"}
+{"level":"info","message":"admin logeado"}
+{"level":"error","message":"Error al obtener productos en tiempo real: Cannot read properties of undefined (reading 'limit')","stack":"TypeError: Cannot read properties of undefined (reading 'limit')\n    at Object.getProducts (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\src\\dao\\viewDAO.JS:4:25)\n    at getRealtimeProducts (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\src\\controladores\\controladorView.js:47:56)\n    at Layer.handle [as handle_request] (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\route.js:144:13)\n    at C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\src\\middleware\\auth.middleware.js:15:14\n    at Layer.handle [as handle_request] (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\route.js:144:13)\n    at Route.dispatch (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\route.js:114:3)\n    at Layer.handle [as handle_request] (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\index.js:284:15"}
+{"level":"info","message":"admin logeado"}
+{"level":"error","message":"Error al obtener productos en tiempo real: Cannot read properties of undefined (reading 'limit')","stack":"TypeError: Cannot read properties of undefined (reading 'limit')\n    at Object.getProducts (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\src\\dao\\viewDAO.JS:4:25)\n    at getRealtimeProducts (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\src\\controladores\\controladorView.js:47:56)\n    at Layer.handle [as handle_request] (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\route.js:144:13)\n    at C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\src\\middleware\\auth.middleware.js:15:14\n    at Layer.handle [as handle_request] (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\route.js:144:13)\n    at Route.dispatch (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\route.js:114:3)\n    at Layer.handle [as handle_request] (C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\Marco\\Downloads\\Desafios-Coder--main\\node_modules\\express\\lib\\router\\index.js:284:15"}
+{"level":"info","message":"Servidor en línea"}
+{"level":"info","message":"admin logeado"}
+{"level":"info","message":"admin logeado"}
+{"level":"info","message":"premium logeado"}
+{"level":"info","message":"premium logeado"}

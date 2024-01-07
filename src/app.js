@@ -21,7 +21,7 @@ const mockingRouter = require('./routers/mockingRouter.js')
 const logger = require('./logger.js')
 const swaggerJSDoc = require("swagger-jsdoc")
 const swaggerUiExpress = require("swagger-ui-express")
-
+const usersRouter = require("./routers/usersRouter.js")
 
 app.use(express.json());
 app.use(errorHandler)
@@ -60,6 +60,7 @@ app.use('/products', viewsRouter);
 app.use('/cart', viewsCart)
 app.use('/api/products', productRouter);
 app.use('/api/carts', cartRouter);
+app.use('/api/user', usersRouter )
 app.use("/api/sessions", sessionRouter)
 app.use('/mockingproducts', mockingRouter)
 

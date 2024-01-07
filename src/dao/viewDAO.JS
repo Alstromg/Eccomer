@@ -16,24 +16,18 @@ const getProducts = async (query) => {
         nextLink: result.hasNextPage ? `/products?page=${result.nextPage}` : null,
     };
 };
-const getRealtimeProducts = async () => {
+const getRealtimeProductsByOwner = async (ownerId) => {
     try {
-        const products = await baseProducts.find().lean().exec();
-        return {
-            status: 'success',
-            payload: products,
-        };
-    } catch (err) {
-        console.error('Error al obtener productos en tiempo real:', err);
-        return {
-            status: 'error',
-            error: 'Error al obtener productos en tiempo real',
-        };
+        const products = await baseProducts.find({ owner: ownerId });
+        return { status: 'success', payload: products || [] };  
+    } catch (error) {
+        return { status: 'error', error: 'Error al obtener productos en tiempo real por propietario' };
     }
 };
 
 
+
 module.exports = {
     getProducts,
-    getRealtimeProducts
+    getRealtimeProductsByOwner
 };

@@ -7,8 +7,8 @@ const {getView, getRealtimeProducts} = require("../controladores/controladorView
 
 const router = Router()
 
-router.get('/' ,getView)
+router.get('/', privateRoutes(["admin", "premium", "user"]), getView );
 
-router.get('/realtimeProducts', privateRoutes, getRealtimeProducts );
+router.get('/realtimeProducts', privateRoutes(["admin", "premium",]), getRealtimeProducts, );
 
 module.exports = router; 

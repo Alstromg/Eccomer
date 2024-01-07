@@ -1,6 +1,7 @@
+
 const productDao = require('../dao/viewDAO.JS');
 const logger = require('../logger')
-
+const config = require('../config/config')
 const getView = async (req, res) => {
     try {
         const result = await productDao.getProducts(req.query);
@@ -35,18 +36,38 @@ const getView = async (req, res) => {
 };
 const getRealtimeProducts = async (req, res) => {
     try {
-        const result = await productDao.getRealtimeProducts();
-
-        if (result.status === 'success') {
-            res.render('realTimeProducts', { products: result.payload });
-        } else {
-            res.status(500).json({ status: 'error', error: 'Error al obtener productos en tiempo real' });
+        const user = res.locals.user;
+        if (!user) {
+            return res.redirect('/');
         }
+
+        let products;
+
+        if (user.email === config.admin.adminEmail) {
+            const allProductsResult = await productDao.getProducts(req.query);
+            if (allProductsResult.status === 'success') {
+                products = allProductsResult.payload || [];
+            } else {
+                return res.status(500).json({ status: 'error', error: 'Error al obtener todos los productos' });
+            }
+        } else {
+            const userProductsResult = await productDao.getRealtimeProductsByOwner(user.email);
+            if (userProductsResult.status === 'success') {
+                products = userProductsResult.payload || [];
+            } else {
+                return res.status(500).json({ status: 'error', error: 'Error al obtener productos por propietario' });
+            }
+        }
+
+        res.render('realTimeProducts', { products, user });
     } catch (err) {
         logger.error('Error al obtener productos en tiempo real:', err);
         res.status(500).json({ status: 'error', error: 'Error interno del servidor' });
     }
 };
+
+
+
 
 
 module.exports = {

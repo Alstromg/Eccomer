@@ -11,7 +11,8 @@ const productSchema = new mongoose.Schema({
         thumbnail: String,
         code: {type:String, require: true, unique:true},
         category: { type: String, required: true },
-        stock: {type:Number, require: true}
+        stock: {type:Number, require: true},
+        owner: {type: String }
 })
 mongoose.set('strictQuery', false)
 productSchema.plugin(mongoosePaginate)

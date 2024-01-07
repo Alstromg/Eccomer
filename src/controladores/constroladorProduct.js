@@ -4,7 +4,7 @@ const {createError} =require ('../services/errors/custom_error.js')
 const EErros  = require ('../services/errors/enums.js')
 const generateErrorInfo =require ('../services/errors/info.js')
 const logger = require('../logger')
-
+const config = require('../config/config.js')
 const getProducts = async (req, res) => {
     try {
         const result = await productsDAO.getProducts(req.query);
@@ -91,19 +91,33 @@ const putProduct = async (req, res) => {
         return res.status(500).json({ status: "error", error: customError });
     }
   }
-const postProducts = async (req, res) => {
-    const { title, description, price, code, stock, category } = req.body;
+  const postProducts = async (req, res ) => {
+    const { title, description, price, code, stock, category } = req.body
+    const user = req.session.user;
     try {
-        
-        const nuevoProducto = await productsDAO.createProduct({
-            title: title,
-            description: description,
-            price: price,
-            code: code,
-            stock: stock,
-            category: category,
-        });
-        res.status(201).json({ message: 'Producto creado exitosamente', producto: nuevoProducto });
+        if(user.email === config.admin.adminEmail){
+            const nuevoProducto = await productsDAO.createProduct({
+                title: title,
+                description: description,
+                price: price,
+                code: code,
+                stock: stock,
+                category: category,
+                owner: "admin"
+            });
+            res.status(201).json({ message: 'Producto creado exitosamente', producto: nuevoProducto });
+        }else{
+            const nuevoProducto = await productsDAO.createProduct({
+                title: title,
+                description: description,
+                price: price,
+                code: code,
+                stock: stock,
+                category: category,
+                owner: user.email
+            });
+            res.status(201).json({ message: 'Producto creado exitosamente', producto: nuevoProducto });
+        }
     } catch (error) {
         const customError = createError({
             name: "Producto no Agregado ",
@@ -111,7 +125,7 @@ const postProducts = async (req, res) => {
             message: "Error al agregar producto",
             code: EErros.INVALID_TYPES_ERROR
         });
-        logger.error('Lanzando el error',  err);
+        logger.error('Lanzando el error', error); 
         return res.status(500).json({ status: "error", error: customError });
     }
 };

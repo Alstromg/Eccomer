@@ -1,16 +1,24 @@
 const logger = require('../logger')
 
-const privateRoutes = (req, res, next) => {
+const privateRoutes = (allowedRoles) => {
+  return (req, res, next) => {
     if (!req.session.user) {
-        return res.redirect('/');
+      return res.redirect('/');
     }
-    if (req.session.user.role === 'admin') {
-        logger.info('Admin logeado')
-        return next();
+
+    const userRole = req.session.user.role;
+
+    res.locals.user = req.session.user;
+
+    if (allowedRoles.includes(userRole)) {
+      logger.info(`${userRole} logeado`);
+      return next();
     } else {
-        logger.warning('Usuario No autorizado')
-        return res.redirect('/');
+      logger.warning('Usuario no autorizado');
+      return res.redirect('/');
     }
+  };
 };
+
 
 module.exports = { privateRoutes };

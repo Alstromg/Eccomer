@@ -1,13 +1,16 @@
+
+
 <h1>Edite</h1>
-<form id="formulario" > 
- <div>Titulo <input class="form-control" type="text" name="" id="title"></div>
- <div>Descripccion<input  class="form-control" type="text" name="" id="description"></div>
- <div>Precio<input  class="form-control" type="number" name="" id="price"></div>
- <div>Codigo<input   class="form-control"type="text" name="" id="code"></div>
- <div>Categoria<input   class="form-control"type="text" name="" id="category"></div>
- <div>Stock<input  class="form-control" type="number" name="" id="stock"></div>
+<form id="formulario" action="/api/products" method="post"> 
+ <div>Titulo <input class="form-control" type="text" name="title" id="title"></div>
+ <div>Descripccion<input  class="form-control" type="text" name="description" id="description"></div>
+ <div>Precio<input  class="form-control" type="number" name="price" id="price"></div>
+ <div>Codigo<input   class="form-control"type="text" name="code" id="code"></div>
+ <div>Categoria<input   class="form-control"type="text" name="category" id="category"></div>
+ <div>Stock<input  class="form-control" type="number" name="stock" id="stock"></div>
+ <input type="submit" value="Crear"> 
 </form>
-<button type="button" class="btn btn-success"  id="createBtn">Crear Nuevo Producto</button>
+
 <table id="realProductsTable" class="table">
 <thead>
     <tr>
@@ -34,6 +37,5 @@
     {{/each}}
 </tbody>
 </table>
-
 <script src="/socket.io/socket.io.js"></script>
 <script src="/index.js"></script>
